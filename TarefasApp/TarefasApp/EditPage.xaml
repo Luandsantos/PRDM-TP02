@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--- CBTPRDM TP02 - Luan dos Santos Sales Pinheiro-->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="TarefasApp.EditPage"
+             Title="EditPage">
+    <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25">
+
+        <Label Text="Adicionar Tarefas"
+            FontSize="28"
+            FontAttributes="Bold"
+            HorizontalOptions="Center" />
+
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*">
+            <Label Text="Título"
+                Grid.Row="0"
+                HorizontalOptions="Start"/>
+            <Entry x:Name="edit_titulo"
+                Grid.Row="1"
+                HorizontalOptions="FillAndExpand"/>
+        </Grid>
+
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*">
+            <Label Text="Descrição"
+                Grid.Row="0"
+                HorizontalOptions="Start"/>
+            <Entry x:Name="edit_descricao"
+                Grid.Row="1"
+                HorizontalOptions="FillAndExpand"/>
+        </Grid>
+
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*">
+            <Label Text="Data"
+                Grid.Row="0"
+                HorizontalOptions="Start"/>
+            <DatePicker x:Name="edit_data"
+                     Grid.Row="1"
+                     MinimumDate="2000-01-01"
+                     MaximumDate="2099-12-31"
+                     HorizontalOptions="FillAndExpand"/>
+        </Grid>
+
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*">
+            <Label Text="Prioridade"
+                Grid.Row="0"
+                HorizontalOptions="Start"/>
+            <Entry x:Name="edit_prioridade"
+                Grid.Row="1"
+                HorizontalOptions="FillAndExpand"/>
+        </Grid>
+
+
+        <Button
+            x:Name="ConfirmEditBtn"
+            Text="Confirmar edição" 
+            Clicked="ConfirmEditClicked" 
+            FontSize="18"
+            CornerRadius="25"
+            HeightRequest="50"
+            HorizontalOptions="FillAndExpand"/>
+
+    </VerticalStackLayout>
+</ContentPage>

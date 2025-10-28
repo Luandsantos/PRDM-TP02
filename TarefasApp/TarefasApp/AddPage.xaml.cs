@@ -1,38 +1,29 @@
 using System.Collections.ObjectModel;
-
+// CBTPRDM TP02 - Luan dos Santos Sales Pinheiro
 namespace TarefasApp;
-
 public partial class AddPage : ContentPage
 {
-	public AddPage(List<Tarefa> task_list)
+    public int id_atual;
+    public AddPage(ObservableCollection<Tarefa> task_list)
 	{
-		InitializeComponent();
+        InitializeComponent();
 	}
 
     private void AddTaskClicked(object sender, EventArgs e)
     {
-        Tarefa new_task = new Tarefa { 
+        Tarefa new_task = new Tarefa
+        {
             Titulo = input_titulo.Text,
             Descricao = input_descricao.Text,
             Data = input_data.Date,
-            Prioridade = input_prioridade.Text};
-        //task_list.Add(new_task);
+            Prioridade = input_prioridade.Text,
+            Id = Tarefa.Id_atual
+        };
 
-        /*
-        ObservableCollection<Tarefa> Tarefas = new ObservableCollection<Tarefa>();
-        lista_tarefas.ItemsSource = new List<Tarefa>
-            {
-               new Tarefa { Titulo="Tarefa1",
-                               Descricao = "Descricao", Prioridade ="Prioridade1" },
-               new Tarefa { Titulo="Tarefa2",
-                              Descricao = "Descricao",  Prioridade = "Prioridade2" }
-            };
-        */
+        Tarefa.Id_atual += 1;
+        Tarefa.task_list.Add(new_task);
 
-        BindingContext = new_task;
-        Navigation.PushModalAsync(new MainPage(new_task));
+        Navigation.PopModalAsync();
+
     }
-
-
-
 }

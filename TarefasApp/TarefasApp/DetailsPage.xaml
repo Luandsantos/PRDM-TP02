@@ -1,17 +1,52 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!--- CBTPRDM TP02 - Luan dos Santos Sales Pinheiro-->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TarefasApp.DetailsPage"
              Title="DetailsPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout
+         Padding="20,0"
+         Spacing="15">
 
-        <Label x:Name="nome_tarefa"
-                        Text="" />
-        <Label x:Name="descricao_tarefa"
-                        Text="" />
-        <Label x:Name="data_tarefa"
-                        Text="" />
-        <Label x:Name="prioridade_tarefa"
+
+        <Label Text="Detalhes da Tarefas"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*">
+            <Label x:Name="nome_tarefa"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Grid.Row="1"
+                   HorizontalOptions="FillAndExpand"/>
+        </Grid>
+
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*">
+            <Label x:Name="descricao_tarefa"
+                   Grid.Row="1"
+                   HorizontalOptions="FillAndExpand"/>
+        </Grid>
+
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*">
+            <Label Text="Data"
+                   Grid.Row="0"
+                   HorizontalOptions="Start"/>
+            <Label x:Name="data_tarefa"
+                   Grid.Row="1"
+                   HorizontalOptions="FillAndExpand"/>
+        </Grid>
+
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*">
+            <Label Text="Prioridade"
+                   Grid.Row="0"
+                   HorizontalOptions="Start"/>
+            <Label x:Name="prioridade_tarefa"
+                   Grid.Row="1"
+                   HorizontalOptions="FillAndExpand"/>
+        </Grid>
+        
+        <Label x:Name="id_tarefa" IsVisible="Hidden"
                         Text="" />
 
         <Button
@@ -23,5 +58,6 @@
             x:Name="DeleteTaskBtn"
             Text="Excluir tarefa" 
             Clicked="DeleteTaskClicked" />
+
     </VerticalStackLayout>
 </ContentPage>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!--- CBTPRDM TP02 - Luan dos Santos Sales Pinheiro-->
 <Shell
     x:Class="TarefasApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"

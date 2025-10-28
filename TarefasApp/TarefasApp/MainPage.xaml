@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--- CBTPRDM TP02 - Luan dos Santos Sales Pinheiro-->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TarefasApp.MainPage">
@@ -8,12 +9,24 @@
             Padding="30,0"
             Spacing="25">
 
+            <Label Text="Lista de Tarefas"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
             <ListView x:Name="lista_tarefas" ItemTapped="OnItemClicked">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell
-                            Text="{Binding Titulo}"
-                            Detail="{Binding Descricao}" />
+                        <ViewCell>
+                            <StackLayout Padding="10" Margin="0,5">
+                                <Label Text="{Binding Titulo}" 
+                                       FontAttributes="Bold"
+                                       FontSize="18" />
+                                <Label Text="{Binding Descricao}" 
+                                       FontSize="14"
+                                       TextColor="Gray" />
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
@@ -21,7 +34,11 @@
             <Button 
                 x:Name="AddPageBtn"
                 Text="Adicionar tarefa"
-                Clicked="OnAddPageClicked" />
+                Clicked="OnAddPageClicked" 
+                FontSize="18"
+                CornerRadius="25"
+                HeightRequest="50"
+                />
         </VerticalStackLayout>
     </ScrollView>
 

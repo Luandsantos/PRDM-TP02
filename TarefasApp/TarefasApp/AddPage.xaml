@@ -1,30 +1,69 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!--- CBTPRDM TP02 - Luan dos Santos Sales Pinheiro-->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             Padding="{OnPlatform iOS='0,60,0,0', Android='0,50,0,0', WinUI='0,30,0,0'}"
              x:Class="TarefasApp.AddPage"
              Title="AddPage">
-    <VerticalStackLayout>
-        <Label
-            Text="Título da tarefa:" />
-        <Entry x:Name="input_titulo" />
+    <ScrollView>
+        <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25">
+        
+        <Label Text="Adicionar Tarefas"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
 
-        <Label
-            Text="Descrição da tarefa:" />
-        <Entry x:Name="input_descricao" />
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*">
+            <Label Text="Título"
+                       Grid.Row="0"
+                       HorizontalOptions="Start"/>
+            <Entry x:Name="input_titulo"
+                       Grid.Row="1"
+                       HorizontalOptions="FillAndExpand"/>
+        </Grid>
 
-        <Label
-            Text="Data de criação da tarefa:" />
-        <DatePicker x:Name="input_data" 
-            MinimumDate="01/01/2000"
-            MaximumDate="12/31/2099" />
-        <Label
-            Text="Prioridade da tarefa:" />
-        <Entry x:Name="input_prioridade" />
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*">
+            <Label Text="Descrição"
+                       Grid.Row="0"
+                       HorizontalOptions="Start"/>
+            <Entry x:Name="input_descricao"
+                       Grid.Row="1"
+                       HorizontalOptions="FillAndExpand"/>
+        </Grid>
+
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*">
+            <Label Text="Data"
+                       Grid.Row="0"
+                       HorizontalOptions="Start"/>
+            <DatePicker x:Name="input_data"
+                            Grid.Row="1"
+                            MinimumDate="2000-01-01"
+                            MaximumDate="2099-12-31"
+                            HorizontalOptions="FillAndExpand"/>
+        </Grid>
+
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*">
+            <Label Text="Prioridade"
+                       Grid.Row="0"
+                       HorizontalOptions="Start"/>
+            <Entry x:Name="input_prioridade"
+                       Grid.Row="1"
+                       HorizontalOptions="FillAndExpand"/>
+        </Grid>
 
         <Button
             x:Name="AddTaskBtn"
             Text="Adicionar tarefa" 
-            Clicked="AddTaskClicked" />
+            Clicked="AddTaskClicked" 
+            FontSize="18"
+            CornerRadius="25"
+            HeightRequest="50"
+            HorizontalOptions="FillAndExpand"
+            />
 
     </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
